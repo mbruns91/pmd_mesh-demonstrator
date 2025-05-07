@@ -1,0 +1,7 @@
+secrets/*
+token.txt
+token.json
+endpoints.json
+pyiron.db
+pyiron.log
+.ipynb_checkpoints

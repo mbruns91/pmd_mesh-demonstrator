@@ -1,0 +1,9 @@
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - pyiron_workflow
+  - pyironflow
+  - openssh
+  - git
+  - nano
