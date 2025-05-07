@@ -4,4 +4,4 @@ token.json
 endpoints.json
 pyiron.db
 pyiron.log
-.ipynb_checkpoints
+.ipynb_checkpoints/
