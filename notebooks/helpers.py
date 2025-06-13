@@ -9,7 +9,7 @@ import re
 
 def canonify_string(name):
     """
-    Remove all invalid characters for python identifiers (everything not a letter, number or underscores) 
+    Remove all invalid characters for python identifiers (everything not a letter, number or underscore) 
     """
     return re.sub(r'[^a-zA-Z0-9_]', '_', name)
 

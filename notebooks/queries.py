@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 
 @dataclass
 class SparqlQuery:
-    """Container for SPARQL queries and column headers corresponding to the expected result."""
+    """Dataclass for SPARQL queries and column headers corresponding to the expected result."""
     query: str = ""
     columns: list[str] = field(default_factory=list)
 
@@ -21,7 +21,7 @@ class QueryCollection:
         """
         query = """
         PREFIX pmd: <https://w3id.org/pmd/co/>
-        SELECT distinct ?p ?matDesVal
+        SELECT DISTINCT ?p ?matDesVal
         WHERE {
             ?s a pmd:TestPiece .
             ?p pmd:input ?s .
