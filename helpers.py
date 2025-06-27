@@ -103,8 +103,7 @@ def query_instance(name: str,
         results[name] = {}
     for ep in endpoints:
         if datasets is None or datasets == [""] or any(substring in ep for substring in datasets): # only query endpoints whose address contains any of the dataset names we passed
-            dataset_name = ep.split("/")[-2] # is this robust enough?
-            #print(dataset_name)
+            dataset_name = ep.split("/")[-2] # Extract the dataset name. Typical pattern for ontodocker endpoints: <ontodocker-addr>/../dataset-name/sparql
             if dataset_name not in results[name]:
                 results[name][dataset_name] = {}
             data = send_query(endpoint=ep, token=token, query=query, columns=columns, print_to_screen=print_to_screen)
@@ -115,8 +114,8 @@ def query_instance(name: str,
     return results
 
 def federated_query(partners, datasets, query, columns, print_to_screen):
+    results = {}
     for key in partners.__dict__:
-        results = {}
         if key not in results:
             results[key] = {}
         name = getattr(partners, key).ontodocker.name

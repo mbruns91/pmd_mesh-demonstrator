@@ -178,20 +178,25 @@ class QueryCollection:
         Returns:
             ...
         """
-        query = """
+        query_template = """
         PREFIX pmd: <https://w3id.org/pmd/co/>
         SELECT distinct ?p ?o ?v ?u
         WHERE {{
-        ?s a pmd:TestPiece .
-        ?p a pmd:TensileTest .
-        ?p pmd:input ?s .
-        ?p pmd:characteristic ?o .
-        ?o a pmd:PrimaryData .
-        ?o pmd:value ?v .
-        ?o pmd:unit ?u .
-        FILTER regex(str(?p), "{uri:s}")
+            ?s a pmd:TestPiece .
+            ?p a pmd:TensileTest .
+            ?p pmd:input ?s .
+            ?p pmd:characteristic ?o .
+            ?o a pmd:PrimaryData .
+            ?o pmd:value ?v .
+            ?o pmd:unit ?u .
+            {filter_clause}
         }} ORDER BY ?p
-        """.format(uri=uri)
+        """
+        if uri is None:
+            filter_clause = ""
+        else:
+            filter_clause = f'FILTER regex(str(?p), "{uri}")'
+        query = query_template.format(filter_clause=filter_clause)
         columns = ['URI', 'Quantity', 'value', 'unit']
         return SparqlQuery(query, columns)
     
@@ -206,20 +211,25 @@ class QueryCollection:
         Returns:
             ...
         """
-        query = """
+        query_template = """
         PREFIX pmd: <https://w3id.org/pmd/co/>
         SELECT distinct ?p ?o ?v ?u
         WHERE {{
-        ?s a pmd:TestPiece .
-        ?p a pmd:TensileTest .
-        ?p pmd:input ?s .
-        ?p pmd:characteristic ?o .
-        ?o a pmd:SecondaryData .
-        ?o pmd:value ?v .
-        ?o pmd:unit ?u .
-        FILTER regex(str(?p), "{uri:s}")
+            ?s a pmd:TestPiece .
+            ?p a pmd:TensileTest .
+            ?p pmd:input ?s .
+            ?p pmd:characteristic ?o .
+            ?o a pmd:SecondaryData .
+            ?o pmd:value ?v .
+            ?o pmd:unit ?u .
+            {filter_clause}
         }} ORDER BY ?p
-        """.format(uri=uri)
+        """
+        if uri is None:
+            filter_clause = ""
+        else:
+            filter_clause = f'FILTER regex(str(?p), "{uri}")'
+        query = query_template.format(filter_clause=filter_clause)
         columns = ['URI', 'Quantity', 'value', 'unit']
         return SparqlQuery(query, columns)
 
@@ -232,21 +242,27 @@ class QueryCollection:
         Args:
             uri (str | None): URI used to identify the process of question
         Returns:
-            ...
+            All properies described as pmd co metadata for all processes/ uris in the graph.
+            If 'uri' is specified, only those for the related process are queried.
         """
-        query = """
+        query_template = """
         PREFIX pmd: <https://w3id.org/pmd/co/>
-        SELECT distinct ?p ?o ?v ?u
+        SELECT DISTINCT ?p ?o ?v ?u
         WHERE {{
-        ?s a pmd:TestPiece .
-        ?p a pmd:TensileTest .
-        ?p pmd:input ?s .
-        ?p pmd:characteristic ?o .
-        ?o a pmd:Metadata .
-        ?o pmd:value ?v .
-        ?o pmd:unit ?u .
-        FILTER regex(str(?p), "{uri:s}")
+            ?s a pmd:TestPiece .
+            ?p a pmd:TensileTest .
+            ?p pmd:input ?s .
+            ?p pmd:characteristic ?o .
+            ?o a pmd:Metadata .
+            ?o pmd:value ?v .
+            ?o pmd:unit ?u .
+            {filter_clause}
         }} ORDER BY ?p
-        """.format(uri=uri)
-        columns = ['URI', 'Quantity', 'value', 'unit']
+        """
+        if uri is None:
+            filter_clause = ""
+        else:
+            filter_clause = f'FILTER regex(str(?p), "{uri}")'
+        query = query_template.format(filter_clause=filter_clause)
+        columns = ["URI", "Quantity", "value", "unit"]
         return SparqlQuery(query, columns)
