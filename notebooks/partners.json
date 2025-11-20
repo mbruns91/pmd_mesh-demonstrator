@@ -1,0 +1,195 @@
+{
+  "BAM": {
+    "bam_s1": {
+      "company": "BAM",
+      "contact": "philipp.beckmann@bam.de",
+      "dns": [
+        "pmd-s1.bam.de"
+      ],
+      "services": {
+        "ontodocker_internal": {
+          "address": "ontodocker-internal.bam-s1.pmd.internal",
+          "name": "ontodocker-internal",
+          "token": "<SECRET>"
+        }
+      },
+      "wg_mesh_dns_zone": "bam-s1.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:3:1::/64"
+    }
+  },
+  "Fraunhofer_AISEC": {
+    "aisec": {
+      "company": "Fraunhofer AISEC",
+      "contact": "pmd@aisec.fraunhofer.de",
+      "dns": [
+        "material-digital.aisec.fraunhofer.de"
+      ],
+      "services": {},
+      "wg_mesh_dns_zone": "aisec.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:2:1::/64"
+    }
+  },
+  "Fraunhofer_ISC": {
+    "isc_dev": {
+      "company": "Fraunhofer ISC",
+      "contact": "simon.stier@isc.fraunhofer.de",
+      "dns": [
+        "pmd-s.open-semantic-lab.org"
+      ],
+      "services": {},
+      "wg_mesh_dns_zone": "isc-dev.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:7:1::/64"
+    }
+  },
+  "Fraunhofer_IWM": {
+    "iwm": {
+      "company": "Fraunhofer IWM",
+      "contact": "rasmus.antons@iwm.fraunhofer.de",
+      "dns": [
+        "pmd.iwm.fraunhofer.de"
+      ],
+      "services": {
+        "ckan": {
+          "address": "ckan.iwm.pmd.internal",
+          "name": "ckan",
+          "token": "<SECRET>"
+        },
+        "fuseki": {
+          "address": "fuseki.iwm.pmd.internal",
+          "name": "fuseki",
+          "token": "<SECRET>"
+        },
+        "jupyterhub_jupyterhub_1": {
+          "address": "jupyterhub-jupyterhub-1.iwm.pmd.internal",
+          "name": "jupyterhub-jupyterhub-1",
+          "token": "<SECRET>"
+        },
+        "ontodocker": {
+          "address": "ontodocker.iwm.pmd.internal",
+          "name": "ontodocker",
+          "token": "<SECRET>"
+        }
+      },
+      "wg_mesh_dns_zone": "iwm.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:9:1::/64"
+    }
+  },
+  "Glassomer_GmbH": {
+    "glassomer": {
+      "company": "Glassomer GmbH",
+      "contact": "bastian.rapp@glassomer.com",
+      "dns": [
+        "pmd.glassomer.com"
+      ],
+      "services": null,
+      "wg_mesh_dns_zone": "glassomer.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:11:1::/64"
+    }
+  },
+  "KIT": {
+    "kit_2": {
+      "company": "KIT",
+      "contact": "pmd@kit.edu",
+      "dns": [
+        "kit-pmd-2.ydns.eu"
+      ],
+      "services": {},
+      "wg_mesh_dns_zone": "kit-2.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:1:2::/64"
+    },
+    "kit_3": {
+      "company": "KIT",
+      "contact": "pmd@kit.edu",
+      "dns": [
+        "kit-pmd-3.ydns.eu"
+      ],
+      "services": {
+        "data": {
+          "address": "data.kit-3.pmd.internal",
+          "name": "data",
+          "token": "<SECRET>"
+        },
+        "ontodocker_proxy": {
+          "address": "ontodocker-proxy.kit-3.pmd.internal",
+          "name": "ontodocker-proxy",
+          "token": "<SECRET>"
+        }
+      },
+      "wg_mesh_dns_zone": "kit-3.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:1:3::/64"
+    },
+    "kit_4": {
+      "company": "KIT",
+      "contact": "pmd@kit.edu",
+      "dns": [
+        "kit-pmd-4.ydns.eu"
+      ],
+      "services": {},
+      "wg_mesh_dns_zone": "kit-4.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:1:4::/64"
+    }
+  },
+  "Leibniz_Institut_fuer_Werkstofforientierte_Technologien_IWT": {
+    "iwt": {
+      "company": "Leibniz-Institut für Werkstofforientierte Technologien - IWT",
+      "contact": "sagehorn@iwt-bremen.de",
+      "dns": [
+        "pmd.iwt-bremen.de"
+      ],
+      "services": {
+        "ontodocker": {
+          "address": "ontodocker.iwt.pmd.internal",
+          "name": "ontodocker",
+          "token": "<SECRET>"
+        }
+      },
+      "wg_mesh_dns_zone": "iwt.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:10:1::/64"
+    }
+  },
+  "MPISusMat": {
+    "mpi_susmat": {
+      "company": "MPISusMat",
+      "contact": "m.bruns@mpie.de",
+      "dns": [
+        "pmds-mpcdf-1.ydns.eu"
+      ],
+      "services": {
+        "data": {
+          "address": "data.mpi-susmat.pmd.internal",
+          "name": "data",
+          "token": "<SECRET>"
+        },
+        "jupyterhub": {
+          "address": "jupyterhub.mpi-susmat.pmd.internal",
+          "name": "jupyterhub",
+          "token": "<SECRET>"
+        },
+        "ontodocker": {
+          "address": "ontodocker.mpi-susmat.pmd.internal",
+          "name": "ontodocker",
+          "token": "<SECRET>"
+        },
+        "pyiron": {
+          "address": "pyiron.mpi-susmat.pmd.internal",
+          "name": "pyiron",
+          "token": "<SECRET>"
+        }
+      },
+      "wg_mesh_dns_zone": "mpi-susmat.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:8:1::/64"
+    }
+  },
+  "Platform_Material_Digital": {
+    "c": {
+      "company": "Platform Material Digital",
+      "contact": "info@material-digital.de",
+      "dns": [
+        "pmdc.material-digital.de"
+      ],
+      "services": {},
+      "wg_mesh_dns_zone": "c.pmd.internal",
+      "wg_mesh_subnet": "fd51:0:0:1::/64"
+    }
+  }
+}
